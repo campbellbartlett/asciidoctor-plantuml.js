@@ -2,9 +2,14 @@ const httpGet = (uri, encoding = 'utf8') => {
   let data = ''
   let status = -1
   try {
+    const url = new URL(uri)
     const XMLHttpRequest = require('unxhr').XMLHttpRequest
     const xhr = new XMLHttpRequest()
-    xhr.open('GET', uri, false)
+    if (url.username && url.password) {
+      xhr.open('GET', `${url.protocol}//${url.host}${url.pathname}`, false, url.username, url.password)
+    } else {
+      xhr.open('GET', `${url.protocol}//${url.host}${url.pathname}`, false)
+    }
     if (encoding === 'binary') {
       xhr.responseType = 'arraybuffer'
     }
