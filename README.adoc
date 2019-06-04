@@ -1,3 +1,15 @@
+= My fork of asciidoctor-plantyml.js
+
+== What is different between this and upstream?
+This fork adds the ability to connect to a plantyml-server which requires basic authentication to connect.
+
+== Configuration
+Follow the official asciidoctor-plantuml.js readme (available https://github.com/eshepelyuk/asciidoctor-plantuml.js/blob/master/README.adoc[here] or read below). When configuring the plantuml-server url add basic auth in the format: https://username:password@plantUmluri.
+
+Example:
+https://myUsername:myPassword@plantuml.campbellbartlett.com
+
+
 = Asciidoctor PlantUML Extension
 :plantuml-server-public: http://www.plantuml.com/plantuml
 :antora-link: https://antora.org[Antora]
